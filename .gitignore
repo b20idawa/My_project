@@ -1,3 +1,5 @@
+/.idea/*
+*.zip
 *.iml
 .gradle
 /local.properties
