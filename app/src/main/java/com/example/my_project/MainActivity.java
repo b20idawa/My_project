@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("knapp", "Du tryckte på andra knappen!");
+                Intent intent = new Intent(MainActivity.this, Djungeln.class);
+                startActivity(intent);
             }
         });
     }
