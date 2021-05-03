@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import com.google.gson.Gson;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -99,6 +102,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String json) {
             Log.d("TAG", json);
+            /* Gson gson = new Gson();
+            animals = gson.fromJson(json,Animals[].class);
+            adapter=new ArrayAdapter<Animals>(MainActivity.this,R.layout.list_item,animals);
+
+            ListView listview = findViewById(R.id.my_first_listview);
+            listview.setAdapter(adapter); */
         }
     }
 }
