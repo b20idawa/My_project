@@ -14,6 +14,9 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,11 +27,9 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private Animals[] animals;
-    ArrayAdapter<Animals> adapter;
+
+    private ArrayAdapter<Animals> adapter;
     private ArrayList<Animals> animalsArrayList;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        animalsArrayList = new ArrayList<>();
+        adapter=new ArrayAdapter<Animals>(MainActivity.this,R.layout.list_item,animalsArrayList);
+
+        ListView listview = findViewById(R.id.my_first_listview);
+        listview.setAdapter(adapter);
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -102,12 +108,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String json) {
             Log.d("TAG", json);
-            /* Gson gson = new Gson();
+            Animals[] animals;
+            Gson gson = new Gson();
             animals = gson.fromJson(json,Animals[].class);
-            adapter=new ArrayAdapter<Animals>(MainActivity.this,R.layout.list_item,animals);
+            animalsArrayList.clear();
 
-            ListView listview = findViewById(R.id.my_first_listview);
-            listview.setAdapter(adapter); */
+            for (int i = 0; i < animals.length; i++)  {
+                Log.d("MainActivity", "Hittade ett djur " + animals[i].getName());
+                animalsArrayList.add(animals[i]);
+            }
+
+            adapter.notifyDataSetChanged();
         }
     }
 }

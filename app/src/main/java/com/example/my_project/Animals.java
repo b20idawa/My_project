@@ -11,4 +11,8 @@ public class Animals {
     private int size;
     private int cost;
     private String auxdata;
+
+    public String getName() {
+        return name;
+    }
 }
