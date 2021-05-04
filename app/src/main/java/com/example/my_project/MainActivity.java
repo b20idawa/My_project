@@ -8,14 +8,13 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayAdapter<Animals> adapter;
     private ArrayList<Animals> animalsArrayList;
+    private Animals[] animals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listview = findViewById(R.id.my_listview);
         listview.setAdapter(adapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Snackbar.make(view, animals[position].getLocation(), Snackbar.LENGTH_LONG).setDuration(5000).show();
+            }
+        });
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -88,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String json) {
             Log.d("TAG", json);
-            Animals[] animals;
             Gson gson = new Gson();
             animals = gson.fromJson(json,Animals[].class);
             animalsArrayList.clear();
