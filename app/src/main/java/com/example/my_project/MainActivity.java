@@ -36,32 +36,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button1 = findViewById(R.id.firstbutton);
-        Button button2 = findViewById(R.id.secondbutton);
-
         new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b20idawa");
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("knapp", "Du tryckte på första knappen!");
-                Intent intent = new Intent(MainActivity.this, Savannen.class);
-                startActivity(intent);
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("knapp", "Du tryckte på andra knappen!");
-                Intent intent = new Intent(MainActivity.this, Djungeln.class);
-                startActivity(intent);
-            }
-        });
         animalsArrayList = new ArrayList<>();
         adapter=new ArrayAdapter<Animals>(MainActivity.this,R.layout.list_item,animalsArrayList);
 
-        ListView listview = findViewById(R.id.my_first_listview);
+        ListView listview = findViewById(R.id.my_listview);
         listview.setAdapter(adapter);
     }
 
