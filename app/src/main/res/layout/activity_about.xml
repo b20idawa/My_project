@@ -21,6 +21,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/my_first_listview" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Djurliv är en applikation som vänder sig till barn i alla åldrar. Appen ska vara ett roligt verktyg för barnen där de kan lära sig mer om djuren ute i det vilda. Appen vill inspirera barnen till att använda sin nyfikenhet för att lära sig mer om djurlivet ute i det vilda."
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:padding="20dp"
+            android:textSize="18sp"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
