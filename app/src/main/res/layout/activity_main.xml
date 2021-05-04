@@ -30,10 +30,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/my_listview" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_about"
+            android:text="Om appen"/>
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
             app:srcCompat="@drawable/africa" />
 
 
