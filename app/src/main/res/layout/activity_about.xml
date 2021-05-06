@@ -28,13 +28,29 @@
             android:textAlignment="center"
             android:gravity="center_horizontal"
             android:padding="20dp"
+            android:layout_marginTop="70dp"
             android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bilderna i appen är hämtade från https://pixabay.com/sv/ och licenserat under Pixabay License"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:padding="20dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tillbaka"
             android:id="@+id/tillbaka1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/elephant" />
 
     </LinearLayout>
 
