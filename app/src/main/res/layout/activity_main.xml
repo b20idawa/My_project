@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Vilka djur lever vart?"
+            android:text="Vad kan du om vilda djur?"
             android:textSize="30sp"
             android:gravity="center_horizontal" />
 

@@ -12,12 +12,17 @@ public class Animals {
     private int cost;
     private String auxdata;
 
+    public String getInformation() {
+        return "Djur:   " + name + '\n' +
+                "Vart:   " + location + '\n' +
+                "Typ:    " + category + '\n' +
+                "Vikt:   " + size + "kg";
+    }
+
     public String getName() {
         return name;
     }
-    public String getLocation() {
-        return location;
-    }
+
     @Override
     public String toString() {
         return name;
