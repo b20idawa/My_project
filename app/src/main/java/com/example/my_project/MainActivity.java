@@ -1,8 +1,10 @@
 package com.example.my_project;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -57,7 +59,17 @@ public class MainActivity extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Snackbar.make(view, animals[position].getLocation(), Snackbar.LENGTH_LONG).setDuration(5000).show();
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Fakta")
+                        .setMessage(animals[position].getLocation())
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.d("AlertDialog", "Du tryckte OK");
+                            }
+                        })
+                        .show();
+                Log.d("AlertDialog", "Här ska en dialog visas");
             }
         });
     }
