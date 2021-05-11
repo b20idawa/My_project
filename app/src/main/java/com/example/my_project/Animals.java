@@ -12,7 +12,7 @@ public class Animals {
     private int cost;
     private String auxdata;
 
-    public String getInformation() {
+    public String info() {
         return "Djur:   " + name + '\n' +
                 "Vart:   " + location + '\n' +
                 "Typ:    " + category + '\n' +
