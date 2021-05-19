@@ -24,25 +24,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Djurliv är en applikation som vänder sig till barn i alla åldrar. Appen ska vara ett roligt verktyg för barnen där de kan lära sig mer om djuren ute i det vilda. Appen vill vara inspirerande och öka barnens nyfikenhet till lärande i olika former."
+            android:text="@string/Om_appen_information"
             android:textAlignment="center"
             android:gravity="center_horizontal"
             android:padding="20dp"
             android:layout_marginTop="70dp"
             android:textSize="18sp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bilderna i appen är hämtade från https://pixabay.com/sv/ och licenserat under Pixabay License"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:padding="20dp"/>
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tillbaka"
+            android:text="@string/tillbaka"
             android:id="@+id/tillbaka1" />
 
         <ImageView
@@ -51,6 +43,15 @@
             android:layout_height="300dp"
             android:layout_marginTop="50dp"
             app:srcCompat="@drawable/elephant" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Licens_information"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:padding="20dp"
+            android:textSize="12sp"/>
 
     </LinearLayout>
 
